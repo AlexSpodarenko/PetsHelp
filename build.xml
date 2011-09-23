@@ -454,7 +454,7 @@
 
     <!-- Copy static files from external dependencies as needed -->
     <copy todir="${build.home}/WEB-INF/lib">
-      <fileset dir="${basedir}/lib"/>
+      <fileset dir="${basedir}/WebContent/WEB-INF/lib"/>
     </copy>    
 
   </target>
