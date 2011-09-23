@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://DefaultNamespace" xmlns:intf="http://DefaultNamespace" xmlns:tns1="http://dto" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://DefaultNamespace">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://DefaultNamespace">
+   <import namespace="http://dto"/>
+   <element name="getGoodHandsList">
+    <complexType>
+     <sequence>
+      <element name="petType" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getGoodHandsListResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getGoodHandsListReturn" type="tns1:GoodHandsInfo"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getStaffList">
+    <complexType/>
+   </element>
+   <element name="getStaffListResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="getStaffListReturn" type="tns1:StaffInfo"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+  <schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://dto">
+   <complexType name="GoodHandsInfo">
+    <sequence>
+     <element name="paint" nillable="true" type="xsd:string"/>
+     <element name="patType" nillable="true" type="xsd:string"/>
+     <element name="petKind" nillable="true" type="xsd:string"/>
+     <element name="size" nillable="true" type="xsd:string"/>
+     <element name="specialFeature" nillable="true" type="xsd:string"/>
+     <element name="wherePlaced" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+   <complexType name="StaffInfo">
+    <sequence>
+     <element name="age" type="xsd:int"/>
+     <element name="count" nillable="true" type="xsd:int"/>
+     <element name="salary" type="xsd:int"/>
+     <element name="staffLogin" nillable="true" type="xsd:string"/>
+     <element name="staffName" nillable="true" type="xsd:string"/>
+    </sequence>
+   </complexType>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getStaffListResponse">
+
+      <wsdl:part element="impl:getStaffListResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getGoodHandsListResponse">
+
+      <wsdl:part element="impl:getGoodHandsListResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getStaffListRequest">
+
+      <wsdl:part element="impl:getStaffList" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getGoodHandsListRequest">
+
+      <wsdl:part element="impl:getGoodHandsList" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="webServ">
+
+      <wsdl:operation name="getGoodHandsList">
+
+         <wsdl:input message="impl:getGoodHandsListRequest" name="getGoodHandsListRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getGoodHandsListResponse" name="getGoodHandsListResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStaffList">
+
+         <wsdl:input message="impl:getStaffListRequest" name="getStaffListRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getStaffListResponse" name="getStaffListResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="webServSoapBinding" type="impl:webServ">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getGoodHandsList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getGoodHandsListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getGoodHandsListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getStaffList">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getStaffListRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getStaffListResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="webServService">
+
+      <wsdl:port binding="impl:webServSoapBinding" name="webServ">
+
+         <wsdlsoap:address location="http://localhost:8080/WebServiceProjectNeeew/services/webServ"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

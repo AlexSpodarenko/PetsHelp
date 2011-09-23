@@ -1,0 +1,8 @@
+DefaultNamespace
+Idao
+dao.ImplJPA
+dao.exceptions
+dto
+mail
+servlets
+web

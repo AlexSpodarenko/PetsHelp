@@ -1,0 +1,5 @@
+openjpa.ConnectionUserName=postgres
+openjpa.ConnectionPassword=Satareal
+openjpa.ConnectionDriverName=org.postgresql.Driver
+openjpa.ConnectionURL=jdbc:postgresql://localhost:5433/PatsBD
+openjpa.jdbc.SynchronizeMappings=buildSchema
